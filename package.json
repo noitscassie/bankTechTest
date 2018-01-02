@@ -1,0 +1,11 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "This is a practice tech test to create a simple, command-line banking app in JavaScript, using TDD and OOD principles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
