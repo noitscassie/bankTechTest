@@ -16,3 +16,13 @@ This is a simple command-line banking application, written in JavaScript. It is 
 
 
 ## Challenges
+
+
+
+
+
+-----
+suggestions from Kay for README inclusion:
+- A very brief oneliner of what the project is or does at the top of the README
+- Set-up, test, running instructions in the form of commands to run in a code block, like this: https://github.com/neoeno/assembler_chat
+- An image/gif of it working
