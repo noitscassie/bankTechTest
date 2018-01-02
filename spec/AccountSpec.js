@@ -32,6 +32,11 @@ describe('Account', function() {
       account.deposit(100);
       account.withdraw(50);
       expect(account.getBalance()).toEqual(50);
-    })
-  })
+    });
+    it('Should raise an error', function() {
+      expect(function() {
+        account.withdraw(50);
+      }).toThrow('Error: requested withdrawal exceeds available funds');
+    });
+  });
 });
