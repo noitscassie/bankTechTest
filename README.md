@@ -32,3 +32,4 @@ suggestions from Kay for README inclusion:
 ------
 To document:
 - Do not like exposed properties outside of class( `_balance`), but necessary in order to use new Jasmine spyOnProperty functionality which only works with new getter/setter implementation (see https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612 and https://stackoverflow.com/questions/44214980/define-get-set-in-constructor-function)
+- Jasmine feature request submitted: https://github.com/jasmine/jasmine/issues/1474
