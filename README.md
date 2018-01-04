@@ -26,3 +26,9 @@ suggestions from Kay for README inclusion:
 - A very brief oneliner of what the project is or does at the top of the README
 - Set-up, test, running instructions in the form of commands to run in a code block, like this: https://github.com/neoeno/assembler_chat
 - An image/gif of it working
+
+
+
+------
+To document:
+- Do not like exposed properties outside of class( `_balance`), but necessary in order to use new Jasmine spyOnProperty functionality which only works with new getter/setter implementation (see https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612 and https://stackoverflow.com/questions/44214980/define-get-set-in-constructor-function)
