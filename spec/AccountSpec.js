@@ -40,10 +40,5 @@ describe('Account', function() {
       account.withdraw(50);
       expect(account._balance).toEqual(50);
     });
-    it('Should raise an error', function() {
-      expect(function() {
-        account.withdraw(50);
-      }).toThrow('Error: requested withdrawal exceeds available funds');
-    });
   });
 });
