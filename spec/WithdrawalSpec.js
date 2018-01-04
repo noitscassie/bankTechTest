@@ -19,7 +19,6 @@ describe('Withdrawal', function() {
 
   describe('#withdraw', function() {
     it('Should reduce an account\'s balance', function() {
-      spyOnProperty(account, 'balance', 'get').and.returnValue(50);
       var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
       account.withdraw(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
