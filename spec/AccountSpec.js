@@ -44,5 +44,10 @@ describe('Account', function() {
       account.withdraw(50);
       expect(account.balance).toEqual(50);
     });
+    it('Should be added to the transactions property', function() {
+      account = new Account(50);
+      account.withdraw(25);
+      expect(account.getTransactions().length).toEqual(1);
+    });
   });
 });
