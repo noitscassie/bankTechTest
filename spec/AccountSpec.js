@@ -32,6 +32,10 @@ describe('Account', function() {
       account.deposit(100);
       expect(account._balance).toEqual(100);
     });
+    it('Should be added to the transactions property', function() {
+      account.deposit(100);
+      expect(account.getTransactions().length).toEqual(1);
+    });
   });
 
   describe('#withdraw', function() {
