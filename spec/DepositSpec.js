@@ -18,7 +18,7 @@ describe('Deposit', function() {
   });
 
   describe('#deposit', function() {
-    it('Should increase an account\'s balance', function() {
+    it('Should call the account balance setter method', function() {
       var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
       account.deposit(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
