@@ -9,7 +9,7 @@ describe('Deposit', function() {
   beforeEach(function() {
     account = new Account();
     deposit = new Deposit(account, 50);
-  })
+  });
 
   describe('Date', function() {
     it('Should be a date object', function() {
@@ -20,7 +20,7 @@ describe('Deposit', function() {
   describe('#deposit', function() {
     it('Should reduce an account\'s balance', function() {
       spyOnProperty(account, 'balance', 'get').and.returnValue(0);
-      var balanceSetterSpy = spyOnProperty(account, 'balance', 'set').and.returnValue(50);
+      var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
       account.deposit(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
     });
