@@ -19,7 +19,6 @@ describe('Deposit', function() {
 
   describe('#deposit', function() {
     it('Should increase an account\'s balance', function() {
-      // spyOnProperty(account, 'balance', 'get').and.returnValue(0);
       var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
       account.deposit(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
