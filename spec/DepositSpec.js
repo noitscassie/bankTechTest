@@ -1,8 +1,8 @@
 'use strict';
 
 describe('Deposit', function() {
-  var Account = require('../lib/account.js').Account;
-  var Deposit = require('../lib/deposit.js').Deposit;
+  var Account = require('../lib/Account.js').Account;
+  var Deposit = require('../lib/Deposit.js').Deposit;
   var account;
   var deposit;
 

@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Account', function() {
-  var Account = require('../lib/account.js').Account;
+  var Account = require('../lib/Account.js').Account;
   var account;
 
   beforeEach(function() {

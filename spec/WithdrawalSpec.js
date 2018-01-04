@@ -1,8 +1,8 @@
 'use strict';
 
 describe('Withdrawal', function() {
-  var Account = require('../lib/account.js').Account;
-  var Withdrawal = require('../lib/withdrawal.js').Withdrawal;
+  var Account = require('../lib/Account.js').Account;
+  var Withdrawal = require('../lib/Withdrawal.js').Withdrawal;
   var account;
   var withdrawal;
 
