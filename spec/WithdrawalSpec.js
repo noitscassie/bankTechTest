@@ -23,6 +23,10 @@ describe('Withdrawal', function() {
       account.withdraw(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
     });
+    it('Should set the updatedBalance property to the updated balance', function() {
+      withdrawal.withdraw();
+      expect(withdrawal.updatedBalance).toEqual(0);
+    });
   });
 
   describe('#checkSufficientFunds', function() {
