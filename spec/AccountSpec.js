@@ -10,14 +10,14 @@ describe('Account', function() {
 
   describe('#getBalance', function() {
     it('Should have a balance of 0', function() {
-      expect(account.getBalance()).toEqual(0);
+      expect(account._balance).toEqual(0);
     });
   });
 
   describe('#setBalance', function() {
     it('Should increment an account\'s balance', function() {
-      account.setBalance(50);
-      expect(account.getBalance()).toEqual(50);
+      account._balance = 50;
+      expect(account._balance).toEqual(50);
     });
   });
 
@@ -30,7 +30,7 @@ describe('Account', function() {
   describe('#deposit', function() {
     it('Should have a balance of 100', function() {
       account.deposit(100);
-      expect(account.getBalance()).toEqual(100);
+      expect(account._balance).toEqual(100);
     });
   });
 
@@ -38,7 +38,7 @@ describe('Account', function() {
     it('Should have a balance of 50', function() {
       account.deposit(100);
       account.withdraw(50);
-      expect(account.getBalance()).toEqual(50);
+      expect(account._balance).toEqual(50);
     });
     it('Should raise an error', function() {
       expect(function() {
