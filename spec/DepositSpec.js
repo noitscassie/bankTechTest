@@ -23,9 +23,9 @@ describe('Deposit', function() {
       account.deposit(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
     });
-  });
-  it('Should set the updatedBalance property to the updated balance', function() {
-    deposit.deposit();
-    expect(deposit.updatedBalance).toEqual(50);
+    it('Should set the updatedBalance property to the updated balance', function() {
+      deposit.deposit();
+      expect(deposit.updatedBalance).toEqual(50);
+    });
   });
 });
