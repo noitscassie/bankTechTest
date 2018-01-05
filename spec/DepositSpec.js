@@ -25,7 +25,7 @@ describe('Deposit', function() {
     });
     it('Should set the updatedBalance property to the updated balance', function() {
       deposit.deposit();
-      expect(deposit.updatedBalance).toEqual(50);
+      expect(deposit._updatedBalance).toEqual(50);
     });
   });
 });
