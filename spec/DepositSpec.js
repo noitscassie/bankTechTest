@@ -1,14 +1,13 @@
 'use strict';
 
 describe('Deposit', function() {
-  var Account = require('../lib/Account.js').Account;
   var Deposit = require('../lib/Deposit.js').Deposit;
-  var account;
+  var fakeAccount;
   var deposit;
 
   beforeEach(function() {
-    account = new Account();
-    deposit = new Deposit(account, 50);
+    fakeAccount = {balance: 0}
+    deposit = new Deposit(fakeAccount, 50);
   });
 
   describe('Date', function() {
@@ -19,9 +18,8 @@ describe('Deposit', function() {
 
   describe('#deposit', function() {
     it('Should call the account balance setter', function() {
-      var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
-      account.deposit(50);
-      expect(balanceSetterSpy).toHaveBeenCalled();
+      deposit.deposit();
+      expect(fakeAccount.balance).toEqual(50);
     });
     it('Should set the updatedBalance property', function() {
       deposit.deposit();
