@@ -34,7 +34,7 @@ describe('Withdrawal', function() {
       var balanceGetterSpy = spyOnProperty(account, 'balance').and.returnValue(25);
       expect(function() {
         account.withdraw(50);
-      } ).toThrow('Error: requested withdrawal exceeds available funds');
+      }).toThrow('Error: requested withdrawal exceeds available funds');
       expect(balanceGetterSpy).toHaveBeenCalled();
     });
   });
