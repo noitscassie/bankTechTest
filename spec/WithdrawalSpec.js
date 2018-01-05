@@ -1,14 +1,13 @@
 'use strict';
 
 describe('Withdrawal', function() {
-  var Account = require('../lib/Account.js').Account;
   var Withdrawal = require('../lib/Withdrawal.js').Withdrawal;
-  var account;
   var withdrawal;
+  var fakeAccount;
 
   beforeEach(function() {
-    account = new Account(50);
-    withdrawal = new Withdrawal(account, 50);
+    fakeAccount = {balance: 50};
+    withdrawal = new Withdrawal(fakeAccount, 50);
   });
 
   describe('Date', function() {
@@ -18,10 +17,9 @@ describe('Withdrawal', function() {
   });
 
   describe('#withdraw', function() {
-    it('Should call the account balance setter method', function() {
-      var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
-      account.withdraw(50);
-      expect(balanceSetterSpy).toHaveBeenCalled();
+    it('Should set the account\'s balance to 0', function() {
+      withdrawal.withdraw();
+      expect(fakeAccount.balance).toEqual(0);
     });
     it('Should set the updatedBalance property', function() {
       withdrawal.withdraw();
@@ -31,11 +29,11 @@ describe('Withdrawal', function() {
 
   describe('#checkSufficientFunds', function() {
     it('Should call the account balance getter method', function() {
-      var balanceGetterSpy = spyOnProperty(account, 'balance').and.returnValue(25);
+      fakeAccount.balance = 50;
+      withdrawal = new Withdrawal(fakeAccount, 100);
       expect(function() {
-        account.withdraw(50);
+        withdrawal.withdraw();
       }).toThrow('Error: requested withdrawal exceeds available funds');
-      expect(balanceGetterSpy).toHaveBeenCalled();
     });
   });
 });
