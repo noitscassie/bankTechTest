@@ -21,12 +21,6 @@ describe('Account', function() {
     });
   });
 
-  describe('#getTransactions', function() {
-    it('Should return an empty array', function() {
-      expect(account.getTransactions()).toEqual([]);
-    });
-  });
-
   describe('#deposit', function() {
     it('Should have a balance of 100', function() {
       account.deposit(100);
@@ -34,7 +28,7 @@ describe('Account', function() {
     });
     it('Should be added to the transactions property', function() {
       account.deposit(100);
-      expect(account.getTransactions().length).toEqual(1);
+      expect(account.transactions.length).toEqual(1);
     });
   });
 
@@ -47,7 +41,7 @@ describe('Account', function() {
     it('Should be added to the transactions property', function() {
       account = new Account(50);
       account.withdraw(25);
-      expect(account.getTransactions().length).toEqual(1);
+      expect(account.transactions.length).toEqual(1);
     });
   });
 });
