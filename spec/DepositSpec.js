@@ -18,12 +18,12 @@ describe('Deposit', function() {
   });
 
   describe('#deposit', function() {
-    it('Should call the account balance setter method', function() {
+    it('Should call the account balance setter', function() {
       var balanceSetterSpy = spyOnProperty(account, 'balance', 'set');
       account.deposit(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
     });
-    it('Should set the updatedBalance property to the updated balance', function() {
+    it('Should set the updatedBalance property', function() {
       deposit.deposit();
       expect(deposit._updatedBalance).toEqual(50);
     });

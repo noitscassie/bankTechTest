@@ -23,7 +23,7 @@ describe('Withdrawal', function() {
       account.withdraw(50);
       expect(balanceSetterSpy).toHaveBeenCalled();
     });
-    it('Should set the updatedBalance property to the updated balance', function() {
+    it('Should set the updatedBalance property', function() {
       withdrawal.withdraw();
       expect(withdrawal.updatedBalance).toEqual(0);
     });
@@ -32,7 +32,9 @@ describe('Withdrawal', function() {
   describe('#checkSufficientFunds', function() {
     it('Should call the account balance getter method', function() {
       var balanceGetterSpy = spyOnProperty(account, 'balance').and.returnValue(25);
-      expect(function() { account.withdraw(50) } ).toThrow('Error: requested withdrawal exceeds available funds');
+      expect(function() {
+        account.withdraw(50);
+      } ).toThrow('Error: requested withdrawal exceeds available funds');
       expect(balanceGetterSpy).toHaveBeenCalled();
     });
   });
